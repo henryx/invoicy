@@ -15,11 +15,12 @@
 
 package com.application.invoicy;
 
+import com.application.invoicy.gui.DialogPrefs;
 import java.io.File;
 
 /**
- * Project       Inventory
- * Description   An inventory management system
+ * Project       Invoicy
+ * Description   An invoice management system
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
@@ -29,12 +30,14 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        DialogPrefs prefs;
         Main m;
         
         m = new Main();
         
-        if(m.isFirstStartup()) {
-            
+        if(!m.isFirstStartup()) {
+            prefs = new DialogPrefs(null);
+            prefs.setVisible(true);
         }
     }
 
