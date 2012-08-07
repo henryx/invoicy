@@ -55,9 +55,10 @@ public class Preferences extends javax.swing.JDialog {
         hostField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
+        setTitle(bundle.getString("Preferences.title")); // NOI18N
 
         okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.okButton.mnemonic").charAt(0));
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
         okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
         okButton.setMinimumSize(new java.awt.Dimension(87, 25));
