@@ -15,6 +15,9 @@
 
 package com.application.invoicy.gui.skel.dialogs;
 
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+
 /**
  * Project       Invoicy
  * Description   An invoice management system
@@ -45,6 +48,8 @@ public class Preferences extends javax.swing.JDialog {
         tabbedPrefs = new javax.swing.JTabbedPane();
         generalPanel = new javax.swing.JPanel();
         DatabasePanel = new javax.swing.JPanel();
+        dbCmbLabel = new javax.swing.JLabel();
+        dbCombo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -81,15 +86,33 @@ public class Preferences extends javax.swing.JDialog {
 
         tabbedPrefs.addTab(bundle.getString("Preferences.generalPanel.TabConstraints.tabTitle"), generalPanel); // NOI18N
 
+        dbCmbLabel.setText(bundle.getString("Preferences.dbCmbLabel.text")); // NOI18N
+
+        dbCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbComboActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DatabasePanelLayout = new javax.swing.GroupLayout(DatabasePanel);
         DatabasePanel.setLayout(DatabasePanelLayout);
         DatabasePanelLayout.setHorizontalGroup(
             DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
+            .addGroup(DatabasePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         DatabasePanelLayout.setVerticalGroup(
             DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGroup(DatabasePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dbCmbLabel)
+                    .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         tabbedPrefs.addTab(bundle.getString("Preferences.DatabasePanel.TabConstraints.tabTitle"), DatabasePanel); // NOI18N
@@ -124,17 +147,27 @@ public class Preferences extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+    private void okButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_okButtonActionPerformed
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+    private void cancelButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelButtonActionPerformed
 
+    private void dbComboActionPerformed(ActionEvent evt) {//GEN-FIRST:event_dbComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dbComboActionPerformed
+
+    public JComboBox getDbCombo() {
+        return dbCombo;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DatabasePanel;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JLabel dbCmbLabel;
+    private javax.swing.JComboBox dbCombo;
     private javax.swing.JPanel generalPanel;
     private javax.swing.JButton okButton;
     private javax.swing.JTabbedPane tabbedPrefs;
