@@ -45,7 +45,7 @@ public class DialogPrefs extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales_it_IT_EURO").getString("DialogPrefs.okButton.mnemonic").charAt(0));
+        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.okButton.mnemonic").charAt(0));
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
         okButton.setText(bundle.getString("DialogPrefs.okButton.text")); // NOI18N
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
@@ -57,7 +57,7 @@ public class DialogPrefs extends javax.swing.JDialog {
             }
         });
 
-        cancelButton.setMnemonic('A');
+        cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.cancelButton.mnemonic").charAt(0));
         cancelButton.setText(bundle.getString("DialogPrefs.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
