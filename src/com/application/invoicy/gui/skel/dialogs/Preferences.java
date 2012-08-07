@@ -16,6 +16,7 @@
 package com.application.invoicy.gui.skel.dialogs;
 
 import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
@@ -68,19 +69,9 @@ public class Preferences extends javax.swing.JDialog {
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
         okButton.setMinimumSize(new java.awt.Dimension(87, 25));
         okButton.setPreferredSize(new java.awt.Dimension(87, 25));
-        okButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
-            }
-        });
 
         cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.cancelButton.mnemonic").charAt(0));
         cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout generalPanelLayout = new javax.swing.GroupLayout(generalPanel);
         generalPanel.setLayout(generalPanelLayout);
@@ -190,14 +181,6 @@ public class Preferences extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_okButtonActionPerformed
-
-    private void cancelButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
     public JComboBox getDbCombo() {
         return this.dbCombo;
     }
@@ -212,6 +195,14 @@ public class Preferences extends javax.swing.JDialog {
     
     public JTextField getDbnameField() {
         return this.dbnameField;
+    }
+    
+    public JButton getOkButton() {
+        return this.okButton;
+    }
+    
+    public JButton getCancelButton() {
+        return this.cancelButton;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -15,7 +15,9 @@
 
 package com.application.invoicy.gui.dialogs;
 
+import com.application.invoicy.gui.signals.dialogs.PrefsActionCancel;
 import com.application.invoicy.gui.signals.dialogs.PrefsActionCombo;
+import com.application.invoicy.gui.signals.dialogs.PrefsActionOk;
 import java.util.ResourceBundle;
 import javax.swing.JFrame;
 
@@ -29,13 +31,18 @@ public class Preferences {
     private com.application.invoicy.gui.skel.dialogs.Preferences skel;
 
     public Preferences(JFrame aFrame) {
+        PrefsActionCancel actionCancel;
         PrefsActionCombo actionCombo;
+        PrefsActionOk actionOk;
         ResourceBundle bundle;
 
         this.skel = new com.application.invoicy.gui.skel.dialogs.Preferences(aFrame, true);
         bundle = ResourceBundle.getBundle("com/application/invoicy/locales");
-        
+
         actionCombo = new PrefsActionCombo();
+        actionOk = new PrefsActionOk();
+        actionCancel = new PrefsActionCancel();
+
         actionCombo.setHostField(this.skel.getHostField());
         actionCombo.setDbCombo(this.skel.getDbCombo());
         actionCombo.setPortField(this.skel.getPortField());
@@ -45,6 +52,8 @@ public class Preferences {
         this.skel.getDbCombo().setSelectedIndex(0);
         
         this.skel.getDbCombo().addActionListener(actionCombo);
+        this.skel.getOkButton().addActionListener(actionOk);
+        this.skel.getCancelButton().addActionListener(actionCancel);
     }
     
     public void setVisible(boolean isVisible) {
