@@ -21,12 +21,12 @@ package com.application.invoicy.gui.skel.dialogs;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class DialogPrefs extends javax.swing.JDialog {
+public class Preferences extends javax.swing.JDialog {
 
     /**
      * Creates new form DialogPrefs
      */
-    public DialogPrefs(java.awt.Frame parent, boolean modal) {
+    public Preferences(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -47,7 +47,7 @@ public class DialogPrefs extends javax.swing.JDialog {
 
         okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.okButton.mnemonic").charAt(0));
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
-        okButton.setText(bundle.getString("DialogPrefs.okButton.text")); // NOI18N
+        okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
         okButton.setMinimumSize(new java.awt.Dimension(87, 25));
         okButton.setPreferredSize(new java.awt.Dimension(87, 25));
@@ -58,7 +58,7 @@ public class DialogPrefs extends javax.swing.JDialog {
         });
 
         cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.cancelButton.mnemonic").charAt(0));
-        cancelButton.setText(bundle.getString("DialogPrefs.cancelButton.text")); // NOI18N
+        cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);

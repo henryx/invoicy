@@ -23,11 +23,11 @@ import javax.swing.JFrame;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class DialogPrefs {
-    private com.application.invoicy.gui.skel.dialogs.DialogPrefs skel;
+public class Preferences {
+    private com.application.invoicy.gui.skel.dialogs.Preferences skel;
 
-    public DialogPrefs(JFrame aFrame) {
-        this.skel = new com.application.invoicy.gui.skel.dialogs.DialogPrefs(aFrame, true);
+    public Preferences(JFrame aFrame) {
+        this.skel = new com.application.invoicy.gui.skel.dialogs.Preferences(aFrame, true);
     }
     
     public void setVisible(boolean isVisible) {
