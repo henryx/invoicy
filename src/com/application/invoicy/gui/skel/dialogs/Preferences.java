@@ -17,6 +17,7 @@ package com.application.invoicy.gui.skel.dialogs;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  * Project       Invoicy
@@ -50,6 +51,8 @@ public class Preferences extends javax.swing.JDialog {
         databasePanel = new javax.swing.JPanel();
         dbCmbLabel = new javax.swing.JLabel();
         dbCombo = new javax.swing.JComboBox();
+        hostLabel = new javax.swing.JLabel();
+        hostField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -88,11 +91,10 @@ public class Preferences extends javax.swing.JDialog {
 
         dbCmbLabel.setText(bundle.getString("Preferences.dbCmbLabel.text")); // NOI18N
 
-        dbCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dbComboActionPerformed(evt);
-            }
-        });
+        hostLabel.setText(bundle.getString("Preferences.hostLabel.text")); // NOI18N
+
+        hostField.setEditable(false);
+        hostField.setMinimumSize(new java.awt.Dimension(4, 24));
 
         javax.swing.GroupLayout databasePanelLayout = new javax.swing.GroupLayout(databasePanel);
         databasePanel.setLayout(databasePanelLayout);
@@ -100,9 +102,13 @@ public class Preferences extends javax.swing.JDialog {
             databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(databasePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hostLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dbCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hostField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         databasePanelLayout.setVerticalGroup(
@@ -112,7 +118,11 @@ public class Preferences extends javax.swing.JDialog {
                 .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dbCmbLabel)
                     .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hostLabel))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         tabbedPrefs.addTab(bundle.getString("Preferences.databasePanel.TabConstraints.tabTitle"), databasePanel); // NOI18N
@@ -155,12 +165,12 @@ public class Preferences extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void dbComboActionPerformed(ActionEvent evt) {//GEN-FIRST:event_dbComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dbComboActionPerformed
-
     public JComboBox getDbCombo() {
-        return dbCombo;
+        return this.dbCombo;
+    }
+    
+    public JTextField getHostField() {
+        return this.hostField;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -169,6 +179,8 @@ public class Preferences extends javax.swing.JDialog {
     private javax.swing.JLabel dbCmbLabel;
     private javax.swing.JComboBox dbCombo;
     private javax.swing.JPanel generalPanel;
+    private javax.swing.JTextField hostField;
+    private javax.swing.JLabel hostLabel;
     private javax.swing.JButton okButton;
     private javax.swing.JTabbedPane tabbedPrefs;
     // End of variables declaration//GEN-END:variables
