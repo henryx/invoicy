@@ -47,7 +47,7 @@ public class Preferences extends javax.swing.JDialog {
         cancelButton = new javax.swing.JButton();
         tabbedPrefs = new javax.swing.JTabbedPane();
         generalPanel = new javax.swing.JPanel();
-        DatabasePanel = new javax.swing.JPanel();
+        databasePanel = new javax.swing.JPanel();
         dbCmbLabel = new javax.swing.JLabel();
         dbCombo = new javax.swing.JComboBox();
 
@@ -94,28 +94,28 @@ public class Preferences extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout DatabasePanelLayout = new javax.swing.GroupLayout(DatabasePanel);
-        DatabasePanel.setLayout(DatabasePanelLayout);
-        DatabasePanelLayout.setHorizontalGroup(
-            DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DatabasePanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout databasePanelLayout = new javax.swing.GroupLayout(databasePanel);
+        databasePanel.setLayout(databasePanelLayout);
+        databasePanelLayout.setHorizontalGroup(
+            databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(databasePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        DatabasePanelLayout.setVerticalGroup(
-            DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DatabasePanelLayout.createSequentialGroup()
+        databasePanelLayout.setVerticalGroup(
+            databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(databasePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dbCmbLabel)
                     .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
 
-        tabbedPrefs.addTab(bundle.getString("Preferences.DatabasePanel.TabConstraints.tabTitle"), DatabasePanel); // NOI18N
+        tabbedPrefs.addTab(bundle.getString("Preferences.databasePanel.TabConstraints.tabTitle"), databasePanel); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,8 +164,8 @@ public class Preferences extends javax.swing.JDialog {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DatabasePanel;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JPanel databasePanel;
     private javax.swing.JLabel dbCmbLabel;
     private javax.swing.JComboBox dbCombo;
     private javax.swing.JPanel generalPanel;
