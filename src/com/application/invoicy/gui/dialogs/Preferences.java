@@ -38,6 +38,7 @@ public class Preferences {
         actionCombo = new PrefsActionCombo();
         actionCombo.setHostField(this.skel.getHostField());
         actionCombo.setDbCombo(this.skel.getDbCombo());
+        actionCombo.setPortField(this.skel.getPortField());
 
         this.skel.getDbCombo().addItem(bundle.getString("Preferences.dbCombo.item1"));
         this.skel.getDbCombo().addItem(bundle.getString("Preferences.dbCombo.item2"));

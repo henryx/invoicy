@@ -30,6 +30,7 @@ public class PrefsActionCombo implements ActionListener {
 
     private JComboBox dbCombo;
     private JTextField hostField;
+    private JTextField portField;
 
     /**
      * @param hostField the hostField to set
@@ -45,12 +46,21 @@ public class PrefsActionCombo implements ActionListener {
         this.dbCombo = dbCombo;
     }
 
+    /**
+     * @param portField the portField to set
+     */
+    public void setPortField(JTextField portField) {
+        this.portField = portField;
+    }
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (this.dbCombo.getSelectedIndex() != 0) {
             this.hostField.setEditable(true);
+            this.portField.setEditable(true);
         } else {
             this.hostField.setEditable(false);
+            this.portField.setEditable(false);
         }
     }
 }
