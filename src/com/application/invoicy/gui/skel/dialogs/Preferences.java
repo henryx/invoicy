@@ -42,10 +42,13 @@ public class Preferences extends javax.swing.JDialog {
 
         okButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
+        tabbedPrefs = new javax.swing.JTabbedPane();
+        generalPanel = new javax.swing.JPanel();
+        DatabasePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.okButton.mnemonic").charAt(0));
+        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.okButton.mnemonic").charAt(0));
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
         okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
@@ -57,7 +60,7 @@ public class Preferences extends javax.swing.JDialog {
             }
         });
 
-        cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("DialogPrefs.cancelButton.mnemonic").charAt(0));
+        cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.cancelButton.mnemonic").charAt(0));
         cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,21 +68,53 @@ public class Preferences extends javax.swing.JDialog {
             }
         });
 
+        javax.swing.GroupLayout generalPanelLayout = new javax.swing.GroupLayout(generalPanel);
+        generalPanel.setLayout(generalPanelLayout);
+        generalPanelLayout.setHorizontalGroup(
+            generalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+        );
+        generalPanelLayout.setVerticalGroup(
+            generalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        tabbedPrefs.addTab(bundle.getString("Preferences.generalPanel.TabConstraints.tabTitle"), generalPanel); // NOI18N
+
+        javax.swing.GroupLayout DatabasePanelLayout = new javax.swing.GroupLayout(DatabasePanel);
+        DatabasePanel.setLayout(DatabasePanelLayout);
+        DatabasePanelLayout.setHorizontalGroup(
+            DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+        );
+        DatabasePanelLayout.setVerticalGroup(
+            DatabasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        tabbedPrefs.addTab(bundle.getString("Preferences.DatabasePanel.TabConstraints.tabTitle"), DatabasePanel); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(208, Short.MAX_VALUE)
-                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancelButton)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cancelButton))
+                    .addComponent(tabbedPrefs))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(263, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(tabbedPrefs)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelButton))
@@ -98,7 +133,10 @@ public class Preferences extends javax.swing.JDialog {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel DatabasePanel;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JPanel generalPanel;
     private javax.swing.JButton okButton;
+    private javax.swing.JTabbedPane tabbedPrefs;
     // End of variables declaration//GEN-END:variables
 }
