@@ -15,6 +15,7 @@
 
 package com.application.invoicy.gui.dialogs;
 
+import com.application.invoicy.gui.signals.dialogs.PrefsActionCombo;
 import java.util.ResourceBundle;
 import javax.swing.JFrame;
 
@@ -28,15 +29,21 @@ public class Preferences {
     private com.application.invoicy.gui.skel.dialogs.Preferences skel;
 
     public Preferences(JFrame aFrame) {
+        PrefsActionCombo actionCombo;
         ResourceBundle bundle;
 
-        bundle = ResourceBundle.getBundle("com/application/invoicy/locales");
-
         this.skel = new com.application.invoicy.gui.skel.dialogs.Preferences(aFrame, true);
+        bundle = ResourceBundle.getBundle("com/application/invoicy/locales");
+        
+        actionCombo = new PrefsActionCombo();
+        actionCombo.setHostField(this.skel.getHostField());
+        actionCombo.setDbCombo(this.skel.getDbCombo());
 
         this.skel.getDbCombo().addItem(bundle.getString("Preferences.dbCombo.item1"));
         this.skel.getDbCombo().addItem(bundle.getString("Preferences.dbCombo.item2"));
         this.skel.getDbCombo().setSelectedIndex(0);
+        
+        this.skel.getDbCombo().addActionListener(actionCombo);
     }
     
     public void setVisible(boolean isVisible) {
