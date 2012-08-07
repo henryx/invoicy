@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.skel;
+package com.application.invoicy.gui.skel.dialogs;
 
 /**
  * Project       Invoicy

@@ -15,7 +15,7 @@
 
 package com.application.invoicy;
 
-import com.application.invoicy.gui.DialogPrefs;
+import com.application.invoicy.gui.dialogs.DialogPrefs;
 import java.io.File;
 
 /**
