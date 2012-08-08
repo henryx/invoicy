@@ -29,11 +29,11 @@ import javax.swing.JFrame;
  */
 public class Preferences {
     private com.application.invoicy.gui.skel.dialogs.Preferences skel;
+    private PrefsActionCancel actionCancel;
+    private PrefsActionOk actionOk;
 
     public Preferences(JFrame aFrame) {
-        PrefsActionCancel actionCancel;
         PrefsActionCombo actionCombo;
-        PrefsActionOk actionOk;
         ResourceBundle bundle;
 
         this.skel = new com.application.invoicy.gui.skel.dialogs.Preferences(aFrame, true);
@@ -58,5 +58,15 @@ public class Preferences {
     
     public void setVisible(boolean isVisible) {
         this.skel.setVisible(isVisible);
+    }
+    
+    public String getBtnPressed() {
+        if (this.actionOk.isPressed()) {
+            return "ok";
+        } else if (this.actionCancel.isPressed()) {
+            return "cancel";
+        } else {
+            return "none";
+        }
     }
 }

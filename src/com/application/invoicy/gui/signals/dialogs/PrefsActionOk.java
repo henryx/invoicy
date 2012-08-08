@@ -25,10 +25,18 @@ import java.awt.event.ActionListener;
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
 public class PrefsActionOk implements ActionListener {
+    private boolean pressed;
+
+    public PrefsActionOk() {
+        this.pressed = false;
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.pressed = true;
     }
-    
+
+    public boolean isPressed() {
+        return this.pressed;
+    }
 }
