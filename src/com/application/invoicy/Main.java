@@ -42,21 +42,8 @@ public class Main {
     }
 
     private boolean isFirstStartup() {
-        File userDir;
-        File cfgFile;
-        
-        userDir = new File(System.getProperty("user.home")
-                + System.getProperty("file.separator")
-                + ".inv");
-        
-        cfgFile = new File(System.getProperty("user.home")
-                + System.getProperty("file.separator")
-                + ".inv"
-                + System.getProperty("file.separator")
-                + "settings.cfg");
-
-        if(userDir.exists() && userDir.isDirectory()) {
-            if(cfgFile.exists() && cfgFile.isFile()) {
+        if(Const.USER_DIR.exists() && Const.USER_DIR.isDirectory()) {
+            if(Const.CFG_FILE.exists() && Const.CFG_FILE.isFile()) {
                 return true;
             } else {
                 return false;
