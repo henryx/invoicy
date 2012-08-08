@@ -41,7 +41,7 @@ public class Preferences {
 
         actionCombo = new PrefsActionCombo();
         actionOk = new PrefsActionOk();
-        actionCancel = new PrefsActionCancel();
+        actionCancel = new PrefsActionCancel(this.skel);
 
         actionCombo.setHostField(this.skel.getHostField());
         actionCombo.setDbCombo(this.skel.getDbCombo());

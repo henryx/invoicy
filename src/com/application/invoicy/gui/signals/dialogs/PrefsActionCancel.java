@@ -15,6 +15,7 @@
 
 package com.application.invoicy.gui.signals.dialogs;
 
+import com.application.invoicy.gui.skel.dialogs.Preferences;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,14 +26,18 @@ import java.awt.event.ActionListener;
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
 public class PrefsActionCancel implements ActionListener {
+    private Preferences skel;
     private boolean pressed;
 
-    public PrefsActionCancel() {
+    public PrefsActionCancel(Preferences skel) {
+        this.skel = skel;
         this.pressed = false;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        this.skel.setVisible(false);
+        this.skel.dispose();
         this.pressed = true;
     }
 
