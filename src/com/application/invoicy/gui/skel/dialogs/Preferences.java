@@ -15,7 +15,6 @@
 
 package com.application.invoicy.gui.skel.dialogs;
 
-import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -75,7 +74,6 @@ public class Preferences extends javax.swing.JDialog {
 
         portField.setEditable(false);
         portField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        portField.setToolTipText(bundle.getString("Preferences.portField.toolTipText")); // NOI18N
         portField.setMinimumSize(new java.awt.Dimension(4, 24));
 
         dbnameLabel.setText(bundle.getString("Preferences.dbnameLabel.text")); // NOI18N
