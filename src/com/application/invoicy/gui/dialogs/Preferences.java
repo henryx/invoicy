@@ -15,6 +15,7 @@
 
 package com.application.invoicy.gui.dialogs;
 
+import com.application.invoicy.Const;
 import com.application.invoicy.gui.signals.dialogs.PrefsActionCancel;
 import com.application.invoicy.gui.signals.dialogs.PrefsActionCombo;
 import com.application.invoicy.gui.signals.dialogs.PrefsActionOk;
@@ -60,13 +61,13 @@ public class Preferences {
         this.skel.setVisible(isVisible);
     }
     
-    public String getBtnPressed() {
+    public int getBtnPressed() {
         if (this.actionOk.isPressed()) {
-            return "ok";
+            return Const.BTN_OK;
         } else if (this.actionCancel.isPressed()) {
-            return "cancel";
+            return Const.BTN_CANCEL;
         } else {
-            return "none";
+            return Const.BTN_NONE;
         }
     }
 }

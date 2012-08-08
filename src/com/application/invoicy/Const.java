@@ -31,5 +31,9 @@ public class Const {
     
     public final static File CFG_FILE = new File(USER_DIR.getAbsolutePath()
                 + System.getProperty("file.separator")
-                + "settings.cfg");    
+                + "settings.cfg");
+    
+    public final static int BTN_NONE = -1;
+    public final static int BTN_OK = 0;
+    public final static int BTN_CANCEL = 1;
 }
