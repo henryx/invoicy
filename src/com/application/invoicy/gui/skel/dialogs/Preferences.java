@@ -45,11 +45,7 @@ public class Preferences extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        okButton = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
-        tabbedPrefs = new javax.swing.JTabbedPane();
-        generalPanel = new javax.swing.JPanel();
-        databasePanel = new javax.swing.JPanel();
+        dbPanel = new javax.swing.JPanel();
         dbCmbLabel = new javax.swing.JLabel();
         dbCombo = new javax.swing.JComboBox();
         hostLabel = new javax.swing.JLabel();
@@ -58,33 +54,15 @@ public class Preferences extends javax.swing.JDialog {
         portField = new javax.swing.JTextField();
         dbnameLabel = new javax.swing.JLabel();
         dbnameField = new javax.swing.JTextField();
+        okButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
         setTitle(bundle.getString("Preferences.title")); // NOI18N
         setResizable(false);
 
-        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.okButton.mnemonic").charAt(0));
-        okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
-        okButton.setMaximumSize(new java.awt.Dimension(87, 25));
-        okButton.setMinimumSize(new java.awt.Dimension(87, 25));
-        okButton.setPreferredSize(new java.awt.Dimension(87, 25));
-
-        cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.cancelButton.mnemonic").charAt(0));
-        cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
-
-        javax.swing.GroupLayout generalPanelLayout = new javax.swing.GroupLayout(generalPanel);
-        generalPanel.setLayout(generalPanelLayout);
-        generalPanelLayout.setHorizontalGroup(
-            generalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
-        );
-        generalPanelLayout.setVerticalGroup(
-            generalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
-        );
-
-        tabbedPrefs.addTab(bundle.getString("Preferences.generalPanel.TabConstraints.tabTitle"), generalPanel); // NOI18N
+        dbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("Preferences.dbPanel.border.title"))); // NOI18N
 
         dbCmbLabel.setText(bundle.getString("Preferences.dbCmbLabel.text")); // NOI18N
 
@@ -104,74 +82,85 @@ public class Preferences extends javax.swing.JDialog {
 
         dbnameField.setMinimumSize(new java.awt.Dimension(4, 24));
 
-        javax.swing.GroupLayout databasePanelLayout = new javax.swing.GroupLayout(databasePanel);
-        databasePanel.setLayout(databasePanelLayout);
-        databasePanelLayout.setHorizontalGroup(
-            databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(databasePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(databasePanelLayout.createSequentialGroup()
-                        .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(portLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(hostLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dbCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hostField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(portField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(databasePanelLayout.createSequentialGroup()
-                        .addComponent(dbnameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dbnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+        javax.swing.GroupLayout dbPanelLayout = new javax.swing.GroupLayout(dbPanel);
+        dbPanel.setLayout(dbPanelLayout);
+        dbPanelLayout.setHorizontalGroup(
+            dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+            .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dbPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(dbPanelLayout.createSequentialGroup()
+                            .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(portLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(hostLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(dbCmbLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(dbCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(hostField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(portField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(dbPanelLayout.createSequentialGroup()
+                            .addComponent(dbnameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(dbnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap()))
         );
-        databasePanelLayout.setVerticalGroup(
-            databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(databasePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dbCmbLabel)
-                    .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hostLabel))
-                .addGap(18, 18, 18)
-                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(portLabel)
-                    .addComponent(portField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(databasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dbnameLabel)
-                    .addComponent(dbnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+        dbPanelLayout.setVerticalGroup(
+            dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 159, Short.MAX_VALUE)
+            .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dbPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dbCmbLabel)
+                        .addComponent(dbCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(hostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hostLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(portLabel)
+                        .addComponent(portField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(dbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dbnameLabel)
+                        .addComponent(dbnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tabbedPrefs.addTab(bundle.getString("Preferences.databasePanel.TabConstraints.tabTitle"), databasePanel); // NOI18N
+        okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.okButton.mnemonic").charAt(0));
+        okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
+        okButton.setMaximumSize(new java.awt.Dimension(87, 25));
+        okButton.setMinimumSize(new java.awt.Dimension(87, 25));
+        okButton.setPreferredSize(new java.awt.Dimension(87, 25));
+
+        cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.cancelButton.mnemonic").charAt(0));
+        cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cancelButton))
-                    .addComponent(tabbedPrefs))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancelButton)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tabbedPrefs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelButton))
@@ -207,17 +196,15 @@ public class Preferences extends javax.swing.JDialog {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JPanel databasePanel;
     private javax.swing.JLabel dbCmbLabel;
     private javax.swing.JComboBox dbCombo;
+    private javax.swing.JPanel dbPanel;
     private javax.swing.JTextField dbnameField;
     private javax.swing.JLabel dbnameLabel;
-    private javax.swing.JPanel generalPanel;
     private javax.swing.JTextField hostField;
     private javax.swing.JLabel hostLabel;
     private javax.swing.JButton okButton;
     private javax.swing.JTextField portField;
     private javax.swing.JLabel portLabel;
-    private javax.swing.JTabbedPane tabbedPrefs;
     // End of variables declaration//GEN-END:variables
 }
