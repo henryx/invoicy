@@ -75,7 +75,7 @@ public class Preferences extends javax.swing.JDialog {
 
         portField.setEditable(false);
         portField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        portField.setText("3050"); // NOI18N
+        portField.setToolTipText(bundle.getString("Preferences.portField.toolTipText")); // NOI18N
         portField.setMinimumSize(new java.awt.Dimension(4, 24));
 
         dbnameLabel.setText(bundle.getString("Preferences.dbnameLabel.text")); // NOI18N

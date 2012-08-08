@@ -58,9 +58,11 @@ public class PrefsActionCombo implements ActionListener {
         if (this.dbCombo.getSelectedIndex() != 0) {
             this.hostField.setEditable(true);
             this.portField.setEditable(true);
+            this.portField.setText("3050");
         } else {
             this.hostField.setEditable(false);
             this.portField.setEditable(false);
+            this.portField.setText("");
         }
     }
 }
