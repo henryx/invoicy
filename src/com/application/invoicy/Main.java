@@ -16,7 +16,6 @@
 package com.application.invoicy;
 
 import com.application.invoicy.gui.dialogs.Preferences;
-import java.io.File;
 
 /**
  * Project       Invoicy
@@ -32,12 +31,16 @@ public class Main {
     public static void main(String[] args) {
         Preferences prefs;
         Main m;
-        
+
         m = new Main();
-        
+
         if(!m.isFirstStartup()) {
             prefs = new Preferences(null);
             prefs.setVisible(true);
+
+            if (prefs.getBtnPressed() != Const.BTN_OK) {
+                System.exit(1);
+            }
         }
     }
 

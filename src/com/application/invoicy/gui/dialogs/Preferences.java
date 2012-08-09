@@ -41,7 +41,7 @@ public class Preferences {
         bundle = ResourceBundle.getBundle("com/application/invoicy/locales");
 
         actionCombo = new PrefsActionCombo();
-        actionOk = new PrefsActionOk();
+        actionOk = new PrefsActionOk(this.skel);
         actionCancel = new PrefsActionCancel(this.skel);
 
         actionCombo.setHostField(this.skel.getHostField());
