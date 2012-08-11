@@ -44,7 +44,9 @@ public class ActionOk implements ActionListener {
     private void createCfg() throws FileNotFoundException, IOException {
         Properties prop;
 
-        Const.USER_DIR.mkdirs();
+        if (!Const.USER_DIR.exists()) {
+            Const.USER_DIR.mkdirs();
+        }
         
         prop = new Properties();
         prop.setProperty("dbtype", "none");
