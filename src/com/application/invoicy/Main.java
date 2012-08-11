@@ -15,7 +15,7 @@
 
 package com.application.invoicy;
 
-import com.application.invoicy.gui.dialogs.Preferences;
+import com.application.invoicy.gui.prefs.PrefsDialog;
 
 /**
  * Project       Invoicy
@@ -29,13 +29,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Preferences prefs;
+        PrefsDialog prefs;
         Main m;
 
         m = new Main();
 
         if(!m.isFirstStartup()) {
-            prefs = new Preferences(null);
+            prefs = new PrefsDialog(null);
             prefs.setVisible(true);
 
             if (prefs.getBtnPressed() != Const.BTN_OK) {

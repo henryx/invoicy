@@ -13,10 +13,10 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.signals.dialogs;
+package com.application.invoicy.gui.prefs.signals;
 
 import com.application.invoicy.Const;
-import com.application.invoicy.gui.skel.dialogs.Preferences;
+import com.application.invoicy.gui.prefs.PrefsSkel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -32,11 +32,11 @@ import java.util.logging.Logger;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class PrefsActionOk implements ActionListener {
-    private Preferences skel;
+public class ActionOk implements ActionListener {
+    private PrefsSkel skel;
     private boolean pressed;
 
-    public PrefsActionOk(Preferences skel) {
+    public ActionOk(PrefsSkel skel) {
         this.skel = skel;
         this.pressed = false;
     }
@@ -60,9 +60,9 @@ public class PrefsActionOk implements ActionListener {
             this.skel.setVisible(false);
             this.skel.dispose();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(PrefsActionOk.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ActionOk.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(PrefsActionOk.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ActionOk.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

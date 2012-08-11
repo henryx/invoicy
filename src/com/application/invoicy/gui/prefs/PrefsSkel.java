@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.skel.dialogs;
+package com.application.invoicy.gui.prefs;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -25,12 +25,12 @@ import javax.swing.JTextField;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class Preferences extends javax.swing.JDialog {
+public class PrefsSkel extends javax.swing.JDialog {
 
     /**
      * Creates new form DialogPrefs
      */
-    public Preferences(java.awt.Frame parent, boolean modal) {
+    public PrefsSkel(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -58,25 +58,25 @@ public class Preferences extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/application/invoicy/locales"); // NOI18N
-        setTitle(bundle.getString("Preferences.title")); // NOI18N
+        setTitle(bundle.getString("PrefsSkel.title")); // NOI18N
         setResizable(false);
 
-        dbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("Preferences.dbPanel.border.title"))); // NOI18N
+        dbPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("PrefsSkel.dbPanel.border.title"))); // NOI18N
 
-        dbCmbLabel.setText(bundle.getString("Preferences.dbCmbLabel.text")); // NOI18N
+        dbCmbLabel.setText(bundle.getString("PrefsSkel.dbCmbLabel.text")); // NOI18N
 
-        hostLabel.setText(bundle.getString("Preferences.hostLabel.text")); // NOI18N
+        hostLabel.setText(bundle.getString("PrefsSkel.hostLabel.text")); // NOI18N
 
         hostField.setEditable(false);
         hostField.setMinimumSize(new java.awt.Dimension(4, 24));
 
-        portLabel.setText(bundle.getString("Preferences.portLabel.text")); // NOI18N
+        portLabel.setText(bundle.getString("PrefsSkel.portLabel.text")); // NOI18N
 
         portField.setEditable(false);
         portField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         portField.setMinimumSize(new java.awt.Dimension(4, 24));
 
-        dbnameLabel.setText(bundle.getString("Preferences.dbnameLabel.text")); // NOI18N
+        dbnameLabel.setText(bundle.getString("PrefsSkel.dbnameLabel.text")); // NOI18N
 
         dbnameField.setMinimumSize(new java.awt.Dimension(4, 24));
 
@@ -130,13 +130,13 @@ public class Preferences extends javax.swing.JDialog {
         );
 
         okButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.okButton.mnemonic").charAt(0));
-        okButton.setText(bundle.getString("Preferences.okButton.text")); // NOI18N
+        okButton.setText(bundle.getString("PrefsSkel.okButton.text")); // NOI18N
         okButton.setMaximumSize(new java.awt.Dimension(87, 25));
         okButton.setMinimumSize(new java.awt.Dimension(87, 25));
         okButton.setPreferredSize(new java.awt.Dimension(87, 25));
 
         cancelButton.setMnemonic(java.util.ResourceBundle.getBundle("com/application/invoicy/locales").getString("Preferences.cancelButton.mnemonic").charAt(0));
-        cancelButton.setText(bundle.getString("Preferences.cancelButton.text")); // NOI18N
+        cancelButton.setText(bundle.getString("PrefsSkel.cancelButton.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

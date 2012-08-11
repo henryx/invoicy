@@ -13,12 +13,12 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.dialogs;
+package com.application.invoicy.gui.prefs;
 
 import com.application.invoicy.Const;
-import com.application.invoicy.gui.signals.dialogs.PrefsActionCancel;
-import com.application.invoicy.gui.signals.dialogs.PrefsActionCombo;
-import com.application.invoicy.gui.signals.dialogs.PrefsActionOk;
+import com.application.invoicy.gui.prefs.signals.ActionCancel;
+import com.application.invoicy.gui.prefs.signals.ActionCombo;
+import com.application.invoicy.gui.prefs.signals.ActionOk;
 import java.util.ResourceBundle;
 import javax.swing.JFrame;
 
@@ -28,21 +28,21 @@ import javax.swing.JFrame;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class Preferences {
-    private com.application.invoicy.gui.skel.dialogs.Preferences skel;
-    private PrefsActionCancel actionCancel;
-    private PrefsActionOk actionOk;
+public class PrefsDialog {
+    private com.application.invoicy.gui.prefs.PrefsSkel skel;
+    private ActionCancel actionCancel;
+    private ActionOk actionOk;
 
-    public Preferences(JFrame aFrame) {
-        PrefsActionCombo actionCombo;
+    public PrefsDialog(JFrame aFrame) {
+        ActionCombo actionCombo;
         ResourceBundle bundle;
 
-        this.skel = new com.application.invoicy.gui.skel.dialogs.Preferences(aFrame, true);
+        this.skel = new com.application.invoicy.gui.prefs.PrefsSkel(aFrame, true);
         bundle = ResourceBundle.getBundle("com/application/invoicy/locales");
 
-        actionCombo = new PrefsActionCombo();
-        actionOk = new PrefsActionOk(this.skel);
-        actionCancel = new PrefsActionCancel(this.skel);
+        actionCombo = new ActionCombo();
+        actionOk = new ActionOk(this.skel);
+        actionCancel = new ActionCancel(this.skel);
 
         actionCombo.setHostField(this.skel.getHostField());
         actionCombo.setDbCombo(this.skel.getDbCombo());

@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.signals.dialogs;
+package com.application.invoicy.gui.prefs.signals;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +26,7 @@ import javax.swing.JTextField;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class PrefsActionCombo implements ActionListener {
+public class ActionCombo implements ActionListener {
 
     private JComboBox dbCombo;
     private JTextField hostField;

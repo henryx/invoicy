@@ -13,9 +13,9 @@
  * limitations under the License
  */
 
-package com.application.invoicy.gui.signals.dialogs;
+package com.application.invoicy.gui.prefs.signals;
 
-import com.application.invoicy.gui.skel.dialogs.Preferences;
+import com.application.invoicy.gui.prefs.PrefsSkel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,11 +25,11 @@ import java.awt.event.ActionListener;
  * 
  * @author Enrico Bianchi <enrico.bianchi@ymail.com>
  */
-public class PrefsActionCancel implements ActionListener {
-    private Preferences skel;
+public class ActionCancel implements ActionListener {
+    private PrefsSkel skel;
     private boolean pressed;
 
-    public PrefsActionCancel(Preferences skel) {
+    public ActionCancel(PrefsSkel skel) {
         this.skel = skel;
         this.pressed = false;
     }
